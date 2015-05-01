@@ -1,0 +1,11 @@
+{
+    "name": "PriorityQueue",
+    "version": "0.1.0",
+    "description": "Priority queue implementationn for Perl 6",
+    "author": "Rob Hoelz",
+    "source-url": "git://github.com/hoelzro/p6-priorityqueue.git",
+    "test-depends": [ "Test::Generative" ],
+    "provides": {
+        "PriorityQueue": "lib/PriorityQueue.pm"
+    }
+}
