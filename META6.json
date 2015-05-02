@@ -1,4 +1,5 @@
 {
+    "perl": "v6.0.0",
     "name": "PriorityQueue",
     "version": "v0.01",
     "description": "Priority queue implementation for Perl 6",
