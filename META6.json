@@ -1,6 +1,6 @@
 {
     "name": "PriorityQueue",
-    "version": "0.1.0",
+    "version": "v0.01",
     "description": "Priority queue implementation for Perl 6",
     "author": "Rob Hoelz",
     "source-url": "git://github.com/hoelzro/p6-priorityqueue.git",
