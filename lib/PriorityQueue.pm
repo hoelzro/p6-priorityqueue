@@ -47,8 +47,9 @@ class PriorityQueue {
             my $left-index  = $index * 2;
             my $right-index = $left-index + 1;
 
-            # XXX use &!cmp
-            my $swap-index = [$index, $left-index, $right-index].grep(* <= $end).min: { @!elements[$^index] };
+            my $swap-index = [$index, $left-index, $right-index].grep(* <= $end).min: {
+                &!cmp(@!elements[$^a], @!elements[$^b]) ?? Order::Less !! Order::More
+            };
             last if $index == $swap-index;
 
             @!elements[$index, $swap-index] = @!elements[$swap-index, $index];
