@@ -3,10 +3,17 @@ use v6;
 constant $VERSION = '0.01';
 
 # XXX can I make this parameterized?
+#| A priority queue implementation. Z<Implemented as a binary heap>
 class PriorityQueue {
     has @!elements; # XXX should be @!elements{1..*}
     has &!cmp;
 
+    #| Constructor.  You can specify a custom comparator via
+    #| C<:cmp>; it should be a code object that returns True
+    #| if its first argument should appear before its second
+    #| when shifting items off of the queue.  If you provide
+    #| a unary function, C<&cmp($a) before &cmp($b)> will be
+    #| used.
     submethod BUILD(:&!cmp = &[before]) {
         # pad the array so that our starting index is
         # 1; makes our calculations a bit easier
@@ -20,6 +27,7 @@ class PriorityQueue {
         }
     }
 
+    #| Adds an element to the queue.
     method push($element) {
         @!elements.push: $element;
 
@@ -38,6 +46,7 @@ class PriorityQueue {
         }
     }
 
+    #| Removes the next element from the queue.
     method shift {
         return unless @!elements > 1;
         return @!elements.pop if @!elements == 2;
