@@ -5,7 +5,7 @@ use v6;
 use Test;
 use PriorityQueue;
 
-plan 2;
+plan 3;
 
 {
     my @numbers  = 55, 93, 79, 79, 71, 1, 26, 12, 67, 53; # just some random numbers
@@ -27,6 +27,24 @@ plan 2;
     my @enqueued = do gather {
         my $q = PriorityQueue.new(:cmp(&[after]));
         $q.push: $_ for @numbers;
+        while $q.shift -> $n {
+            take $n;
+        }
+    };
+
+    is_deeply @enqueued, @sorted;
+}
+
+{
+    my class Wrapper {
+        has $.value;
+    }
+
+    my @values = (32, 83, 44, 4, 17, 40, 43, 31, 37, 71).map: { Wrapper.new(:$^value) };
+    my @sorted   = @values.sort(*.value);
+    my @enqueued = do gather {
+        my $q = PriorityQueue.new(:cmp(*.value));
+        $q.push: $_ for @values;
         while $q.shift -> $n {
             take $n;
         }
