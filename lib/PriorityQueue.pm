@@ -91,4 +91,4 @@ This class implements a priority queue data structure.
 
 =begin AUTHOR
 Rob Hoelz <rob AT-SIGN hoelz.ro>
-=end
+=end AUTHOR
