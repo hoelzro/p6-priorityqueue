@@ -7,11 +7,17 @@ class PriorityQueue {
     has @!elements; # XXX should be @!elements{1..*}
     has &!cmp;
 
-    # XXX unary cmp should compare by that function's results
     submethod BUILD(:&!cmp = &[before]) {
         # pad the array so that our starting index is
         # 1; makes our calculations a bit easier
         @!elements.push: Any;
+
+        if &!cmp.count == 1 {
+            my $cmp = &!cmp;
+            &!cmp = -> $a, $b {
+                $cmp($a) before $cmp($b)
+            };
+        }
     }
 
     method push($element) {
