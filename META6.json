@@ -11,7 +11,7 @@
     },
     "support": {
         "email": "rob AT-SIGN hoelz.ro",
-        "bugtracker": "https://github.com/hoelzro/p6-priorityqueue/issues",
+        "bugtracker": "https://github.com/hoelzro/p6-priorityqueue/issues"
     },
     "license": "http://opensource.org/licenses/MIT",
     "tags": [
