@@ -18,7 +18,7 @@ plan 3;
         }
     };
 
-    is_deeply @enqueued, @sorted;
+    is-deeply @enqueued, @sorted;
 }
 
 {
@@ -32,7 +32,7 @@ plan 3;
         }
     };
 
-    is_deeply @enqueued, @sorted;
+    is-deeply @enqueued, @sorted;
 }
 
 {
@@ -50,5 +50,5 @@ plan 3;
         }
     };
 
-    is_deeply @enqueued, @sorted;
+    is-deeply @enqueued, @sorted;
 }
