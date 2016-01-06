@@ -4,7 +4,7 @@
     "version": "v0.01",
     "description": "Priority queue implementation for Perl 6",
     "author": "Rob Hoelz",
-    "source-url": "git://github.com/hoelzro/p6-priorityqueue.git",
+    "source-url": "https://github.com/hoelzro/p6-priorityqueue.git",
     "test-depends": [],
     "provides": {
         "PriorityQueue": "lib/PriorityQueue.pm"
